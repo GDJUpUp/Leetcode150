@@ -5,37 +5,21 @@ public class N189_RotatingArrays {
 
     }
 
-//    使用新数组
-    public static void rotateByNewArray(int[] nums, int k) {
-        int[] newArray = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            newArray[i+(k% nums.length)] = nums[i];
-        }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = newArray[i];
-        }
-    }
-
-//    ToDo：学习java中数组操作
-//    ToDo：切换k个位置
-    public static void rotateByK(int[] nums, int k) {
-        int[] newArray = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            newArray[i+(k% nums.length)] = nums[i];
-        }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = newArray[i];
-        }
-    }
-
-    //    ToDo：翻转数组
     public static void rotateByReverseArray(int[] nums, int k) {
-        int[] newArray = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            newArray[i+(k% nums.length)] = nums[i];
-        }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = newArray[i];
+        k = k%nums.length;
+        reverse(nums,0,nums.length-1);
+        reverse(nums,0,k-1);
+        reverse(nums,k,nums.length-1);
+    }
+
+    public static void reverse(int[] nums,int begin,int end){
+        int temp = 0;
+        while(begin<end){
+            temp = nums[begin];
+            nums[begin] = nums[end];
+            nums[end] = temp;
+            begin++;
+            end--;
         }
     }
 }
