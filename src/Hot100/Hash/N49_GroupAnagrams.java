@@ -20,7 +20,6 @@ public class N49_GroupAnagrams {
                 List<String> strings = map.getOrDefault(string,new ArrayList<String>());
                 strings.add(str);
                 map.put(string,strings);
-
             }else {
                 List<String> strings = new ArrayList<>();
                 strings.add(str);
