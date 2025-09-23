@@ -2,7 +2,7 @@ package ArrayAndString;
 
 public class N80_RemoveDuplicatesFromAnOrderedArray {
     public static void main(String[] args) {
-        int nums[] = new int[]{1,1,1,3};
+        int[] nums = new int[]{1,1,1,3};
         System.out.println(removeDuplicates(nums));
     }
 

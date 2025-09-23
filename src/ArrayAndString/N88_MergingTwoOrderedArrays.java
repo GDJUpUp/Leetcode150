@@ -9,9 +9,9 @@ package ArrayAndString;
 
 public class N88_MergingTwoOrderedArrays {
     public static void main(String[] args) {
-        int nums1[] = {2,0};
+        int[] nums1 = {2,0};
         int m = 1;
-        int nums2[] = {1};
+        int[] nums2 = {1};
         int n = 1;
 //        测试
 //        invertedDoublePointer(nums1,m,nums2,n);
@@ -23,7 +23,7 @@ public class N88_MergingTwoOrderedArrays {
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int auxiliaryArray[] = new int[m+n];//辅助数组
+        int[] auxiliaryArray = new int[m+n];//辅助数组
         //nums1、nums2、auxiliaryArray的左指针
         int l1 = 0;
         int l2 = 0;
@@ -55,9 +55,7 @@ public class N88_MergingTwoOrderedArrays {
             }
         }
         //将辅助数组中的内容放到nums1中
-        for (int i = 0; i < auxiliaryArray.length; i++) {
-            nums1[i] = auxiliaryArray[i];
-        }
+        System.arraycopy(auxiliaryArray, 0, nums1, 0, auxiliaryArray.length);
 
     }
 
